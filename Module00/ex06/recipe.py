@@ -25,7 +25,10 @@ def printAllRecipes():
 
 def printRecipe(name):
     try:
-        print(cookbook[name])
+        print(f"Recipe for {name}:")
+        print(f"\tIngredients list: {cookbook[name]['ingredients']}")
+        print(f"\tTo be eaten for {cookbook[name]['meal']}.")
+        print(f"\tTakes {cookbook[name]['prep_time']} minutes of cooking.")
     except:
         print("recipe not found")
 
@@ -52,11 +55,41 @@ def addRecipe():
         print("time should be a positive number")
         sys.exit()
     meal = dict(ingredients= ingredient, meal= type, prep_time = time)
-    print(meal)
     try:
         cookbook[name] = meal
     except:
         print('meal already exist')
 
-addRecipe()
+
+def printmenu():
+    print('''
+welcome to the Python Cookbook !
+List of available option:
+    1: Add a recipe
+    2: Delete a recipe
+    3: Print a recipe
+    4: Print the cookbook
+    5: Quit
+''')
+
+def main():
+    printmenu()
+    inp = 0
+    while inp != 5:
+        try:
+            inp = int(input("Please select an option:\n>> "))
+        except:
+            print("Sorry, this option does not exist.")
+        if inp == 1:
+            addRecipe()
+        elif inp == 2:
+            deletRecipe(input("Recipe name:\n>> "))
+        elif inp == 3:
+            printRecipe(input("Recipe name:\n>> "))
+        elif inp == 4:
+            printAllRecipes()       
+        else : 
+            print("Sorry, this option does not exist.")
 #print(cookbook)
+if __name__ == '__main__':
+    main()
