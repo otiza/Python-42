@@ -1,5 +1,5 @@
 import random
-
+import sys
 number = random.randint(1, 99)
 
 def game():
@@ -41,3 +41,5 @@ Good luck!''')
 
 if __name__ == '__main__':
     game()
+else:
+    sys.exit()
