@@ -30,7 +30,7 @@ class Recipe:
             f"Cooking time: {self.cooking_time}\n"
             f"Ingredients: {self.ingredients}\n"
             f"Recipe type: {self.recipe_type}\n"
-            f"Description: {self.description}\n"
+            f"Description: {self.description}"
         )
 
 if __name__ == "__main__":
