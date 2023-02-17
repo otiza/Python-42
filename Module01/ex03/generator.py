@@ -5,7 +5,7 @@ def generator(text, sep=" ", option=None):
     option precise if a action is performed to the substrings before it is yielded.
     '''
     if not isinstance(text, str):
-        raise TypeError("text must be a string")
+        return "ERROR"
     ret = text.split(sep)
     if option == None:
         for i in ret:
@@ -23,7 +23,7 @@ def generator(text, sep=" ", option=None):
         for i in ret:
             yield i
     else :
-        raise ValueError("this option is not defined")
+        return "ERROR"
 
 
     
