@@ -18,22 +18,22 @@ Good luck!''')
         except:
             print("That's not a number.")
             continue
-        if guess < 1 or guess > 99:
-            print("Out of range.")
-            continue
-        if guess < number:
-            print("Too low!")
-            attempt += 1
-            continue
-        if guess > number:
-            print("Too high!")
-            attempt += 1
-            continue
         if guess == 42:
             print("The answer to the ultimate question of life, the universe and everything is 42.")
             print("You won in {} attempts!".format(attempt))
+            break
+        if guess < 1 or guess > 99:
+            print("Out of range.")
             continue
-        if guess == number:
+        elif guess < number:
+            print("Too low!")
+            attempt += 1
+            continue
+        elif guess > number:
+            print("Too high!")
+            attempt += 1
+            continue
+        elif guess == number:
             print("Congratulations, you've got it!")
             print("You won in {} attempts!".format(attempt))
             break
